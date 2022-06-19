@@ -1,7 +1,7 @@
 const buildError = (error, message) => {
     return{
         message,
-        error
+        error: error.message ? error.message : 'no error message'
     }
 }
 
