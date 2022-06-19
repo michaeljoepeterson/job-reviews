@@ -3,7 +3,7 @@ const axios = require('axios').default;
 const { JSDOM } = require("jsdom");
 const { buildHeaders } = require('../helpers/build-headers');
 const { JobReview } = require('../models/job-review');
-
+//todo add cache
 class JobHandler{
     constructor(url){
         this.url = url;

@@ -7,8 +7,8 @@ router.get('/reviews/:job', async (req, res, next) => {
     try{
         const {job} = req.params;
         //start and end pages, page 
-        const {start, end} = req.query;
-        const reviews = start ? await jobHandler.bulkGetReviewElements(job, start, end) : await jobHandler.getReviews(job);
+        const {start, end, range} = req.query;
+        const reviews = start ? await jobHandler.bulkGetReviewElements(job, start, end, range) : await jobHandler.getReviews(job);
         return res.json({
             message: 'Found Reviews',
             reviews
