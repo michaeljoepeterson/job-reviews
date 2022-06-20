@@ -1,8 +1,8 @@
 <template>
   <hr/>
-  <p>{{review.rating}}</p>
-  <p>{{review.pros}}</p>
-  <p>{{review.cons}}</p>
+  <p>Rating: {{review.rating}}</p>
+  <p>Pros: {{review.pros}}</p>
+  <p>Cons: {{review.cons}}</p>
 </template>
 
 <script>

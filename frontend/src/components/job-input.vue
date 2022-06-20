@@ -48,7 +48,7 @@
                 event.preventDefault();
                 if(this.jobName){
                     this.error = null;
-                    this.$emit('search', this.jobName);
+                    this.$emit('search', this.jobName, this.startPage);
                 }
                 else{
                     this.error = `Can't parse url`;

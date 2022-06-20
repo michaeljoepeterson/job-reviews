@@ -24,11 +24,14 @@ export default {
     }
   },
   methods:{
-    async searchReviews(job){
+    async searchReviews(job, startPage){
         this.loading = true;
         try{
             console.log('parent ', job);
-            const url = `http://localhost:8080/api/jobs/reviews/${job}`;
+            let url = `http://localhost:8080/api/jobs/reviews/${job}`;
+            if(startPage){
+                url += `?start=${startPage}`;
+            }
             const res = await axios.get(url);
             console.log(res.data);
             this.reviews = res.data.reviews ? res.data.reviews : [];
