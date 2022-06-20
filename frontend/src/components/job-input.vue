@@ -1,6 +1,13 @@
 <template>
     <form @submit="(e) => search(e)">
-        <input v-model="urlInput"/>
+        <div>
+            <label for="job">Job url</label>
+            <input v-model="urlInput" id="job"/>
+        </div>
+        <div>
+            <label for="start-page">Start Page</label>
+            <input type="number" id="start-page" v-model="startPage"/>
+        </div>
         <button type="submit">Search</button>
     </form>
     <p v-if="error">
@@ -16,7 +23,8 @@
             return{
                 urlInput: '',
                 jobName: '',
-                error: ''
+                error: '',
+                startPage: 1
             }
         },
         watch:{
