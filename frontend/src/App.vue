@@ -1,14 +1,14 @@
 <template>
-  <JobInput/>
+  <HomePage/>
 </template>
 
 <script>
-import JobInput from './components/job-input.vue';
+import HomePage from './components/home-page.vue';
 
 export default {
   name: 'App',
   components: {
-    JobInput
+    HomePage
   }
 }
 </script>

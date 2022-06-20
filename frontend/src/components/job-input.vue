@@ -3,16 +3,20 @@
         <input v-model="urlInput"/>
         <button type="submit">Search</button>
     </form>
-        {{jobName}}
+    <p v-if="error">
+        {{error}}
+    </p>
 </template>
 
 <script>
     export default{
         name: 'job-input',
+        emits: ['search'],
         data(){
             return{
                 urlInput: '',
-                jobName: ''
+                jobName: '',
+                error: ''
             }
         },
         watch:{
@@ -34,7 +38,13 @@
         methods:{
             search(event){
                 event.preventDefault();
-                console.log('find reviews', this.jobName);
+                if(this.jobName){
+                    this.error = null;
+                    this.$emit('search', this.jobName);
+                }
+                else{
+                    this.error = `Can't parse url`;
+                }
             }
         }
     }
